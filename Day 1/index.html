@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Day 1 | Expanding cards</title>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.container{
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* border: 2px solid yellow; */
+}
+.card{
+    border-radius: 30px;
+    flex: 0.5;
+    cursor: pointer;
+    height: 80vh;
+    margin: 5px;
+    /* border: 2px solid blueviolet; */
+    transition: flex 0.7s ease-in;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+.card:hover{
+    border-radius: 30px;
+    flex: 0.5;
+    cursor: pointer;
+    height: 80vh;
+    margin: 5px;
+    /* border: 2px solid blueviolet; */
+    transition: flex 0.7s ease-in;
+    position: relative;
+    /* box-shadow: 1px 1px 1px 1px rgb(255, 5, 5); */
+}
+
+.card.active{
+    flex: 5;
+    cursor: not-allowed;
+}
+.card h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    opacity: 0%;
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px gray;
+}
+.active h3{
+    transition: opacity 0.4s ease-in 0.3s;
+    opacity: 100%;
+    bottom: 20px;
+    left: 20px;
+}
+.mouse{
+    background-color: rgb(162, 162, 255);
+}
+
+#card-1{
+    background-color: rgb(248, 115, 106);
+}
+#card-2{
+    background-color: rgb(255, 217, 112);
+}
+#card-3{
+    background-color: rgb(175, 248, 106);
+}
+#card-4{
+    background-color: rgb(106, 248, 236);
+}
+#card-5{
+    background-color: rgb(248, 106, 224);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="card-1" class="card active context"><h3>Card-1</h3></div>
+        <div id="card-2" class="card"><h3>Card-2</h3></div>
+        <div id="card-3" class="card"><h3>Card-3</h3></div>
+        <div id="card-4" class="card"><h3>Card-4</h3></div>
+        <div id="card-5" class="card"><h3>Card-5</h3></div>
+    </div>
+
+<script>
+    let panels = document.querySelectorAll('.card')
+console.log(panels)
+panels.forEach(function f(panel){
+    panel.addEventListener('click',function z(){
+        removeActiveClass();
+        panel.classList.add('active');
+    });
+
+});
+
+function removeActiveClass(){
+    panels.forEach(function f(panel){
+        panel.classList.remove('active');
+    });
+}
+</script></body>
+</html>

@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+.mainContainer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+h1{
+    color: black;
+}
+.box{
+    height: 80px;
+    margin: 20px auto;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 153, 255);
+    transform: translateX(400%);
+    transition: transform 0.3s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-400%);
+}
+.box.visible{
+    transform: translateX(0);
+}
